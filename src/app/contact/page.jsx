@@ -6,6 +6,7 @@ import { PageHero } from "@/components/shared/page-hero";
 import { ContactDetails } from "@/components/contact/contact-details";
 import { ContactMap } from "@/components/contact/contact-map";
 import { ContactForm } from "@/components/forms/contact-form";
+import { RegistrationSection } from "@/components/home/registration-section";
 import { CtaBand } from "@/components/shared/cta-band";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
@@ -63,6 +64,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <RegistrationSection />
       <CtaBand
         heading="Prefer to talk directly?"
         subheading="Send a WhatsApp message or an email and we will pick it up right away."

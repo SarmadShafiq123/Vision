@@ -6,6 +6,7 @@ import { SkipLink } from "@/components/layout/skip-link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { Toaster } from "@/components/ui/sonner";
 
 const bricolage = Bricolage_Grotesque({
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
     <html lang={siteConfig.language} className={`${bricolage.variable} ${geist.variable} ${instrumentSerif.variable}`}>
       <body className="min-h-dvh bg-background text-foreground antialiased">
         <SkipLink />
+        <ScrollToTop />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

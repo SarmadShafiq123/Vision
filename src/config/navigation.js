@@ -5,6 +5,6 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const registerHref = "/#register";
+export const registerHref = "/contact#register";
 export const whatsappPrefillMessage =
   "Hello, I would like to know more about admissions at Vision Academy.";

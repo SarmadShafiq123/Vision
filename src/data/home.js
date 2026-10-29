@@ -5,7 +5,7 @@ export const heroContent = {
   headlineTail: "clear path.",
   subline:
     "A school in Gujranwala that walks with your child from their first classroom to their final exams, pairing strong academics with real-world skills.",
-  primaryAction: { label: "Register now", href: "/#register" },
+  primaryAction: { label: "Register now", href: "/contact#register" },
   secondaryAction: { label: "Chat on WhatsApp", variant: "whatsapp" },
   facts: [
     { label: "Playgroup to Class 12" },

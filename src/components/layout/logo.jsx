@@ -19,7 +19,7 @@ export function Logo({ className }) {
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
         priority
-        className="h-10 w-auto"
+        className="h-10 w-auto object-contain"
       />
     </Link>
   );

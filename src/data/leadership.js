@@ -3,7 +3,7 @@ export const ROLE_CEO = "Chief Executive Officer";
 
 export const leadershipData = [
   {
-    displayName: "Ma'am Tayyab",
+    displayName: "Ma'am Tayyaba",
     role: ROLE_FOUNDER,
     schemaName: null,
     photo: null,
