@@ -13,7 +13,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden border-b border-line bg-paper">
-      <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-8 md:py-32 lg:px-10">
+      <div className="relative mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-20 lg:px-10">
         <div className="max-w-3xl">
           {siteConfig.admissionsOpen && (
             <HeroReveal delay={0}>
