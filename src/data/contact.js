@@ -7,8 +7,7 @@ export const contactInfo = {
     line1: "554H+5CH, Gulshanabad Chah Chohan Wala",
     line2: "Gujranwala, Pakistan",
   },
-  timings:
-    "PLACEHOLDER_TIMINGS — specific hours not found in source. The academy operates by appointment.",
+  timings: "By appointment. Reach out on WhatsApp or by phone to book a time.",
   appointmentNote:
     "Visits are by appointment. Reach out on WhatsApp or by phone to book a time.",
   socialLinks: [
@@ -55,7 +54,6 @@ export const contactDetailCards = [
     title: "Hours",
     lines: [
       "By appointment only",
-      "PLACEHOLDER_TIMINGS — specific hours not found in source.",
     ],
   },
 ];

@@ -63,7 +63,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang={siteConfig.language} className={`${bricolage.variable} ${geist.variable} ${instrumentSerif.variable}`}>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="min-h-dvh bg-background text-foreground antialiased">
         <SkipLink />
         <SiteHeader />
         <main id="main">{children}</main>

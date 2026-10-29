@@ -18,7 +18,9 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
-export function TextField({ name, label, placeholder, type = "text", autoComplete }) {
+const INPUT_BASE = "text-base";
+
+export function TextField({ name, label, placeholder, type = "text", autoComplete, inputMode }) {
   return (
     <FormField
       name={name}
@@ -30,11 +32,13 @@ export function TextField({ name, label, placeholder, type = "text", autoComplet
               type={type}
               placeholder={placeholder}
               autoComplete={autoComplete}
+              inputMode={inputMode}
               aria-describedby={`${name}-error`}
+              className={INPUT_BASE}
               {...field}
             />
           </FormControl>
-          <FormMessage id={`${name}-error`} />
+          <FormMessage id={`${name}-error`} role="alert" />
         </FormItem>
       )}
     />
@@ -53,10 +57,11 @@ export function TextAreaField({ name, label, placeholder, rows = 4 }) {
               placeholder={placeholder}
               rows={rows}
               aria-describedby={`${name}-error`}
+              className={INPUT_BASE}
               {...field}
             />
           </FormControl>
-          <FormMessage id={`${name}-error`} />
+          <FormMessage id={`${name}-error`} role="alert" />
         </FormItem>
       )}
     />
@@ -74,20 +79,20 @@ export function SelectField({ name, label, placeholder, options }) {
             <FormControl>
               <SelectTrigger
                 aria-describedby={`${name}-error`}
-                className={cn("h-11")}
+                className={cn("h-11", INPUT_BASE)}
               >
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
             </FormControl>
             <SelectContent>
               {options.map((option) => (
-                <SelectItem key={option} value={option}>
+                <SelectItem key={option} value={option} className={INPUT_BASE}>
                   {option}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
-          <FormMessage id={`${name}-error`} />
+          <FormMessage id={`${name}-error`} role="alert" />
         </FormItem>
       )}
     />

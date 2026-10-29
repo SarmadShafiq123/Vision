@@ -98,8 +98,10 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1,
@@ -110,6 +112,11 @@ h5,
 h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
 }
 
 .font-serif-accent {
@@ -123,6 +130,21 @@ h6 {
   --normal-text: var(--popover-foreground);
   --normal-border: var(--border);
   --border-radius: var(--radius);
+}
+
+.tab-list-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.tab-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-trigger-snap {
+  scroll-snap-align: start;
 }
 
 @keyframes marquee {
@@ -144,7 +166,13 @@ h6 {
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 60s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-marquee {
+    animation-duration: 40s;
+  }
 }
 
 .marquee-pause:hover .animate-marquee {
@@ -158,6 +186,12 @@ h6 {
 .animate-ring-pulse:hover,
 .animate-ring-pulse:focus-visible {
   animation-play-state: paused;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

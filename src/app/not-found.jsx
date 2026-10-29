@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { buildMetadata } from "@/lib/metadata";
-import { ArcMark } from "@/components/shared/arc-mark";
+import { navLinks } from "@/config/navigation";
 
 export const metadata = {
   title: "Page not found",

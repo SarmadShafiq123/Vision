@@ -14,20 +14,19 @@ export function RegistrationSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading
-              index="05"
+              index="06"
               label="Register"
-              titleLead="Start the"
-              titleAccent="process"
+              titleLead="Register your"
+              titleAccent="child"
               titleTail="here"
-              description="Fill in your details and our team will get back to you to arrange a visit."
+              description="Fill in your details and our admissions team will be in touch to arrange a visit."
             />
             <p className="mt-6 font-body text-base leading-relaxed text-muted-foreground">
-              We will confirm receipt of your registration and reach out on WhatsApp
-              or by phone within one working day. There is no fee to register your
-              interest.
+              We will confirm your registration and reach out on WhatsApp or by phone
+              within one working day. There is no fee to register.
             </p>
           </div>
-          <Card className="border-line shadow-sm">
+          <Card className="border-line">
             <CardHeader>
               <CardTitle className="font-heading text-xl text-ink">
                 Registration form

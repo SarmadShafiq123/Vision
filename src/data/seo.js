@@ -28,11 +28,11 @@ export const seoPages = {
   },
   contact: {
     path: "/contact",
-    title: "Contact Vision Academy Gujranwala",
+    title: "Contact Vision Academy | Find Us in Gujranwala",
     description:
-      "Get in touch with Vision Academy in Gujranwala. Call, email, or visit us at Gulshanabad. We respond within one working day.",
-    ogTitle: "Contact Vision Academy Gujranwala",
+      "Call, email, or visit Vision Academy in Gujranwala, Pakistan. Find our address, phone number, and send us a message. We respond within one working day.",
+    ogTitle: "Contact Vision Academy | Find Us in Gujranwala",
     ogDescription:
-      "Contact Vision Academy in Gujranwala by phone, email, or visit. Quick response within one working day.",
+      "Get in touch with Vision Academy in Gujranwala. Call, email, or visit us at Gulshanabad.",
   },
 };

@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
-import { siteConfig, orgAddress, orgGeo } from "@/config/site";
-import { contactInfo } from "@/data/contact";
+import { buildHomeGraph } from "@/lib/seo/schemas";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Hero } from "@/components/home/hero";
 import { StatsStrip } from "@/components/home/stats-strip";
 import { SubjectMarquee } from "@/components/home/subject-marquee";
@@ -15,34 +15,10 @@ import { CtaBand } from "@/components/shared/cta-band";
 
 export const metadata = buildMetadata("home");
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  telephone: contactInfo.phone,
-  email: contactInfo.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: orgAddress.streetAddress,
-    addressLocality: orgAddress.addressLocality,
-    addressRegion: orgAddress.addressRegion,
-    addressCountry: orgAddress.addressCountry,
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: orgGeo.latitude,
-    longitude: orgGeo.longitude,
-  },
-};
-
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd schema={buildHomeGraph()} />
       <Hero />
       <StatsStrip />
       <SubjectMarquee />

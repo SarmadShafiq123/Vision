@@ -6,7 +6,7 @@ export function LevelPanel({ level }) {
       <h2 className="font-heading text-3xl font-bold tracking-tight text-ink">
         {level.label}
       </h2>
-      <div className="mt-2 inline-block rounded-full bg-mist px-3 py-1 font-body text-sm font-medium text-royal">
+      <div className="mt-2 font-body text-sm font-medium text-muted-foreground">
         {level.classesCovered}
       </div>
       <div className="mt-6 space-y-6">

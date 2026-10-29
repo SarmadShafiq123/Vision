@@ -19,7 +19,7 @@ export function WhatsAppFab() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className={cn(
-        "fixed bottom-5 right-5 z-40",
+        "fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-5 z-40",
         "flex size-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg",
         "transition-transform hover:scale-105",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2",

@@ -18,8 +18,8 @@ export function ContactDetails() {
             key={card.id}
             className="flex gap-4 rounded-2xl border border-line bg-card p-5"
           >
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-mist">
-              <Icon className="size-5 text-royal" />
+            <div className="mt-0.5 shrink-0">
+              <Icon className="size-5 text-royal" aria-hidden="true" />
             </div>
             <div>
               <h3 className="font-heading text-sm font-semibold text-ink">

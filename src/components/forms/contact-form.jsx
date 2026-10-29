@@ -54,29 +54,35 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <HoneypotField register={form.register} name={HONEYPOT_FIELD_NAME} />
         <TextField
           name="name"
           label="Your name"
           placeholder={FIELD_PLACEHOLDERS.name}
+          autoComplete="name"
         />
         <TextField
           name="email"
           label="Email address"
           placeholder={FIELD_PLACEHOLDERS.email}
           type="email"
+          inputMode="email"
+          autoComplete="email"
         />
         <TextField
           name="phone"
           label="Phone (optional)"
           placeholder={FIELD_PLACEHOLDERS.phone}
           type="tel"
+          inputMode="tel"
+          autoComplete="tel"
         />
         <TextField
           name="subject"
           label="Subject"
           placeholder={FIELD_PLACEHOLDERS.subject}
+          autoComplete="off"
         />
         <TextAreaField
           name="message"
@@ -84,7 +90,7 @@ export function ContactForm() {
           placeholder={FIELD_PLACEHOLDERS.message}
           rows={5}
         />
-        <SubmitButton isSubmitting={isSubmitting}>
+        <SubmitButton isSubmitting={isSubmitting} className="w-full sm:w-auto">
           Send message
         </SubmitButton>
       </form>

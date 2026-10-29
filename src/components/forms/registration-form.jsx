@@ -55,23 +55,27 @@ export function RegistrationForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <HoneypotField register={form.register} name={HONEYPOT_FIELD_NAME} />
         <TextField
           name="studentName"
           label="Student name"
           placeholder={FIELD_PLACEHOLDERS.studentName}
+          autoComplete="name"
         />
         <TextField
           name="parentName"
           label="Parent or guardian name"
           placeholder={FIELD_PLACEHOLDERS.parentName}
+          autoComplete="given-name"
         />
         <TextField
           name="phone"
           label="Phone number"
           placeholder={FIELD_PLACEHOLDERS.phone}
           type="tel"
+          inputMode="tel"
+          autoComplete="tel"
         />
         <SelectField
           name="classApplying"
@@ -85,7 +89,7 @@ export function RegistrationForm() {
           placeholder={FIELD_PLACEHOLDERS.message}
           rows={3}
         />
-        <SubmitButton isSubmitting={isSubmitting}>
+        <SubmitButton isSubmitting={isSubmitting} className="w-full sm:w-auto">
           Submit registration
         </SubmitButton>
       </form>
