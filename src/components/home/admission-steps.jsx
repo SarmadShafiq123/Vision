@@ -12,7 +12,7 @@ export function AdmissionSteps() {
     <section className={`border-t border-line bg-card ${SECTION_PADDING_Y}`}>
       <div className={`${PAGE_MAX_WIDTH} ${CONTAINER_PADDING_X}`}>
         <SectionHeading
-          index="04"
+          index="05"
           label="Admissions"
           titleLead="How to"
           titleAccent="join"

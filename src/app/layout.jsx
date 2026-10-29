@@ -28,14 +28,41 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-export const metadata = buildMetadata({
-  title: siteConfig.tagline,
-  description: siteConfig.description,
-});
+export const metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    template: "%s",
+    default: siteConfig.name,
+  },
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    telephone: false,
+  },
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      ...(process.env.BING_SITE_VERIFICATION && {
+        other: {
+          "msvalidate.01": process.env.BING_SITE_VERIFICATION,
+        },
+      }),
+    },
+  }),
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: siteConfig.themeColor,
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable} ${instrumentSerif.variable}`}>
+    <html lang={siteConfig.language} className={`${bricolage.variable} ${geist.variable} ${instrumentSerif.variable}`}>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <SkipLink />
         <SiteHeader />

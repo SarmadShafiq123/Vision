@@ -4,12 +4,7 @@ import { LevelTabs } from "@/components/academics/level-tabs";
 import { CtaBand } from "@/components/shared/cta-band";
 import { SECTION_PADDING_Y, PAGE_MAX_WIDTH, CONTAINER_PADDING_X } from "@/constants/layout";
 
-export const metadata = buildMetadata({
-  title: "Academics",
-  description:
-    "Academic programmes at Vision Academy from playgroup through Class 12, covering early years, primary, middle, secondary, and higher secondary levels.",
-  path: "/academics",
-});
+export const metadata = buildMetadata("academics");
 
 export default function AcademicsPage() {
   return (

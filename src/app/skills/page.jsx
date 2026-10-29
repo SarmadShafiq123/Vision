@@ -5,12 +5,7 @@ import { CtaBand } from "@/components/shared/cta-band";
 import { skillsData } from "@/data/skills";
 import { SECTION_PADDING_Y, PAGE_MAX_WIDTH, CONTAINER_PADDING_X } from "@/constants/layout";
 
-export const metadata = buildMetadata({
-  title: "Skills",
-  description:
-    "Short, practical courses at Vision Academy: truck dispatch, spoken English, web applications, and AI and automation.",
-  path: "/skills",
-});
+export const metadata = buildMetadata("skills");
 
 export default function SkillsPage() {
   return (

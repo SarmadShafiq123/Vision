@@ -1,36 +1,46 @@
 import { siteConfig } from "@/config/site";
+import { seoPages } from "@/data/seo";
 
-export function buildMetadata({ title, description, path, image }) {
-  const fullTitle = title
-    ? `${title} — ${siteConfig.name}`
-    : `${siteConfig.name} — ${siteConfig.tagline}`;
+const DEFAULT_TITLE_TEMPLATE = "%s";
+const MAX_SNIPPET = -1;
+const MAX_IMAGE_PREVIEW = "large";
 
-  const canonical = path
-    ? `${siteConfig.url}${path}`
-    : siteConfig.url;
+export function buildMetadata(pageKey) {
+  const page = seoPages[pageKey];
+  
+  if (!page) {
+    return {
+      title: siteConfig.name,
+      description: siteConfig.description,
+    };
+  }
 
-  const metaDescription = description || siteConfig.description;
+  const canonical = `${siteConfig.url}${page.path}`;
 
-  const metadata = {
-    title: fullTitle,
-    description: metaDescription,
-    alternates: { canonical },
+  return {
+    title: page.title,
+    description: page.description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
-      title: fullTitle,
-      description: metaDescription,
-      url: canonical,
-      siteName: siteConfig.name,
-      locale: siteConfig.locale,
       type: "website",
-      ...(image ? { images: [{ url: image }] } : {}),
+      siteName: siteConfig.name,
+      locale: siteConfig.ogLocale,
+      url: canonical,
+      title: page.ogTitle || page.title,
+      description: page.ogDescription || page.description,
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
-      description: metaDescription,
-      ...(image ? { images: [image] } : {}),
+      title: page.ogTitle || page.title,
+      description: page.ogDescription || page.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      maxSnippet: MAX_SNIPPET,
+      maxImagePreview: MAX_IMAGE_PREVIEW,
     },
   };
-
-  return metadata;
 }

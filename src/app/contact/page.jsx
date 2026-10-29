@@ -7,12 +7,7 @@ import { CtaBand } from "@/components/shared/cta-band";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { SECTION_PADDING_Y, PAGE_MAX_WIDTH, CONTAINER_PADDING_X } from "@/constants/layout";
 
-export const metadata = buildMetadata({
-  title: "Contact",
-  description:
-    "Get in touch with Vision Academy in Gujranwala, Pakistan. Call, email, or send a message and we will respond within one working day.",
-  path: "/contact",
-});
+export const metadata = buildMetadata("contact");
 
 export default function ContactPage() {
   return (
