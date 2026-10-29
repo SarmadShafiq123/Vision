@@ -1,23 +1,26 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
-export function Logo({ className, variant = "dark" }) {
-  const textColor = variant === "dark" ? "text-ink" : "text-white";
-  const subColor = variant === "dark" ? "text-muted-foreground" : "text-white/70";
+const LOGO_WIDTH = 140;
+const LOGO_HEIGHT = 48;
 
+export function Logo({ className }) {
   return (
     <Link
       href="/"
-      className={cn("inline-flex flex-col leading-none", className)}
+      className={cn("inline-flex items-center", className)}
       aria-label={`${siteConfig.name} home`}
     >
-      <span className={cn("font-heading text-lg font-bold tracking-tight", textColor)}>
-        {siteConfig.name.toUpperCase().replace(" ACADEMY", "")}
-      </span>
-      <span className={cn("font-heading text-[0.625rem] font-medium uppercase tracking-[0.25em]", subColor)}>
-        Academy
-      </span>
+      <Image
+        src="/brand/logo.png"
+        alt={siteConfig.name}
+        width={LOGO_WIDTH}
+        height={LOGO_HEIGHT}
+        priority
+        className="h-10 w-auto"
+      />
     </Link>
   );
 }

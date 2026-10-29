@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Phone, Mail, MessageCircle } from "lucide-react";
-import { Logo } from "@/components/layout/logo";
 import { navLinks } from "@/config/navigation";
 import { buildWhatsAppLink, buildMailtoLink } from "@/lib/links";
 import { contactInfo } from "@/data/contact";
@@ -40,7 +39,9 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-8 lg:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
-            <Logo variant="light" />
+            <span className="font-heading text-lg font-bold tracking-tight text-white">
+              {siteConfig.name}
+            </span>
             <p className="mt-4 max-w-xs font-body text-sm leading-relaxed text-white/60">
               {siteConfig.tagline}
             </p>
