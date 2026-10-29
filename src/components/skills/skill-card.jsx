@@ -1,6 +1,12 @@
-export function SkillCard({ title, description, audience, duration }) {
+import { MessageCircle } from "lucide-react";
+import { buildWhatsAppCourseLink } from "@/lib/links";
+import { cn } from "@/lib/utils";
+
+export function SkillCard({ title, description, audience, duration, delayClass }) {
+  const whatsappLink = buildWhatsAppCourseLink(title);
+
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-line bg-card p-6 transition-shadow hover:shadow-md">
+    <article className="flex h-full flex-col rounded-2xl border border-line bg-card p-6">
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-heading text-xl font-semibold text-ink">{title}</h3>
         {duration && (
@@ -18,6 +24,20 @@ export function SkillCard({ title, description, audience, duration }) {
           {audience}
         </p>
       )}
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "mt-4 inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-whatsapp px-4 font-body text-sm font-semibold text-white",
+          "transition-colors hover:bg-whatsapp/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2",
+          "animate-ring-pulse",
+          delayClass,
+        )}
+      >
+        <MessageCircle className="size-4" />
+        Enquire on WhatsApp
+      </a>
     </article>
   );
 }

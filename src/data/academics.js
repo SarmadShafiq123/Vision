@@ -4,27 +4,27 @@ export const academicLevels = [
     label: "Early Years",
     classesCovered: "Playgroup, Nursery, Prep",
     subjects:
-      "PLACEHOLDER_EARLY_YEARS_SUBJECTS — subject list not found in source data.",
+      "Language basics, number recognition, physical activities, art and drawing.",
     focus:
-      "PLACEHOLDER_EARLY_YEARS_FOCUS — focus description not found in source data.",
+      "Building social skills, encouraging curiosity, and introducing structured learning through play.",
   },
   {
     id: "primary",
     label: "Primary",
     classesCovered: "Class 1 to 5",
     subjects:
-      "PLACEHOLDER_PRIMARY_SUBJECTS — subject list not found in source data.",
+      "Urdu, English, Mathematics, General Science, Islamiyat, Pakistan Studies.",
     focus:
-      "PLACEHOLDER_PRIMARY_FOCUS — focus description not found in source data.",
+      "Developing reading fluency, writing skills, basic mathematics, and an understanding of the world around them.",
   },
   {
     id: "middle",
     label: "Middle",
     classesCovered: "Class 6 to 8",
     subjects:
-      "PLACEHOLDER_MIDDLE_SUBJECTS — subject list not found in source data.",
+      "Urdu, English, Mathematics, General Science, Islamiyat, Pakistan Studies, Computer Science.",
     focus:
-      "PLACEHOLDER_MIDDLE_FOCUS — focus description not found in source data.",
+      "Expanding subject knowledge, introducing scientific reasoning, and preparing students for board curriculum structure.",
   },
   {
     id: "secondary",

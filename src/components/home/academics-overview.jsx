@@ -27,7 +27,7 @@ export function AcademicsOverview() {
             <Reveal key={level.id} delay={idx * 0.08}>
               <Link
                 href={level.href}
-                className="group flex h-full flex-col rounded-2xl border border-line bg-card p-5 transition-shadow hover:shadow-md"
+                className="group flex h-full flex-col rounded-2xl border border-line bg-card p-5"
               >
                 <h3 className="font-heading text-lg font-semibold text-ink">
                   {level.title}

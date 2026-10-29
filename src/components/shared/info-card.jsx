@@ -7,13 +7,13 @@ export function InfoCard({ icon: Icon, title, children, className }) {
       className={cn(
         CARD_RADIUS,
         HAIRLINE_BORDER,
-        "bg-card p-6 transition-shadow hover:shadow-md",
+        "bg-card p-6",
         className,
       )}
     >
       {Icon && (
-        <div className="mb-4 flex size-10 items-center justify-center rounded-lg bg-mist">
-          <Icon className="size-5 text-royal" />
+        <div className="mb-4">
+          <Icon className="size-6 text-royal" />
         </div>
       )}
       {title && (

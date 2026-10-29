@@ -29,6 +29,7 @@
   --brand-mist: #e8f1fa;
   --brand-paper: #fafbfe;
   --brand-line: #d8e2f0;
+  --brand-whatsapp: #0b7a43;
 }
 
 @theme inline {
@@ -59,6 +60,7 @@
   --color-mist: var(--brand-mist);
   --color-paper: var(--brand-paper);
   --color-line: var(--brand-line);
+  --color-whatsapp: var(--brand-whatsapp);
 
   --font-heading: var(--font-bricolage), sans-serif;
   --font-body: var(--font-geist), sans-serif;
@@ -76,6 +78,20 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  font-size: 100%;
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 105%;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 110%;
+  }
 }
 
 body {
@@ -118,6 +134,15 @@ h6 {
   }
 }
 
+@keyframes ring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(11, 122, 67, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0.75rem rgba(11, 122, 67, 0);
+  }
+}
+
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
@@ -126,11 +151,23 @@ h6 {
   animation-play-state: paused;
 }
 
+.animate-ring-pulse {
+  animation: ring-pulse 2.4s ease-out infinite;
+}
+
+.animate-ring-pulse:hover,
+.animate-ring-pulse:focus-visible {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-marquee {
+    animation: none;
+  }
+  .animate-ring-pulse {
     animation: none;
   }
 }

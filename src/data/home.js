@@ -14,10 +14,9 @@ export const heroContent = {
 };
 
 export const statsData = [
-  { value: 25, suffix: "+", label: "Years teaching" },
-  { value: 500, suffix: "+", label: "Students taught" },
-  { value: 12, suffix: "+", label: "Programmes offered" },
-  { value: 95, suffix: "%", label: "Pass rate" },
+  { value: "Playgroup–12", suffix: "", label: "Class range", key: "classRange" },
+  { value: 5, suffix: "", label: "Learning levels", key: "learningLevels" },
+  { value: 4, suffix: "", label: "Skill programmes", key: "skillProgrammes" },
 ];
 
 export const marqueeItems = [
@@ -48,7 +47,7 @@ export const academicsOverview = [
     title: "Early Years",
     gradeRange: "Playgroup, Nursery, Prep",
     summary:
-      "PLACEHOLDER_EARLY_YEARS_SUMMARY — early childhood description not found in source data.",
+      "First steps in learning with age-appropriate activities, play-based routines, and early literacy and numeracy.",
     href: "/academics",
   },
   {
@@ -56,7 +55,7 @@ export const academicsOverview = [
     title: "Primary",
     gradeRange: "Class 1 to 5",
     summary:
-      "PLACEHOLDER_PRIMARY_SUMMARY — primary school description not found in source data.",
+      "Core subjects taught with clear learning outcomes, building reading, writing, and problem-solving skills.",
     href: "/academics",
   },
   {
@@ -64,7 +63,7 @@ export const academicsOverview = [
     title: "Middle",
     gradeRange: "Class 6 to 8",
     summary:
-      "PLACEHOLDER_MIDDLE_SUMMARY — middle school description not found in source data.",
+      "Subject depth increases as students prepare for board-aligned secondary coursework and develop study habits.",
     href: "/academics",
   },
   {

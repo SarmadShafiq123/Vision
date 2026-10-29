@@ -5,7 +5,6 @@ import {
   SECTION_PADDING_Y,
   PAGE_MAX_WIDTH,
   CONTAINER_PADDING_X,
-  GRID_GAP,
 } from "@/constants/layout";
 
 export function WhyUs() {
@@ -19,19 +18,23 @@ export function WhyUs() {
           titleAccent="Vision"
           titleTail="different"
         />
-        <div className={`mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 ${GRID_GAP}`}>
+        <div className="mt-12 space-y-8">
           {whyUsItems.map((item, idx) => (
             <Reveal key={item.number} delay={idx * 0.1}>
-              <div className="border-l border-line pl-5">
-                <span className="font-heading text-3xl font-bold text-line">
-                  {item.number}
-                </span>
-                <h3 className="mt-2 font-heading text-lg font-semibold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
-                  {item.text}
-                </p>
+              <div className="flex gap-6 border-t border-line pt-8 first:border-t-0 first:pt-0">
+                <div className="shrink-0">
+                  <span className="font-heading text-5xl font-bold text-line">
+                    {item.number}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-semibold text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 max-w-2xl font-body text-base leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}

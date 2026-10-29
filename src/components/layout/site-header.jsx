@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full",
-        "border-b border-line bg-paper/90 backdrop-blur-sm",
+        "border-b border-line bg-paper",
       )}
     >
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6 md:px-8 lg:px-10">

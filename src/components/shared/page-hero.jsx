@@ -1,4 +1,3 @@
-import { ArcMark } from "@/components/shared/arc-mark";
 import { cn } from "@/lib/utils";
 
 export function PageHero({ index, label, title, description }) {
@@ -28,10 +27,6 @@ export function PageHero({ index, label, title, description }) {
               {description}
             </p>
           )}
-          <ArcMark
-            className="mt-8 h-10 w-32 text-sky"
-            strokeWidth={2.5}
-          />
         </div>
       </div>
     </section>

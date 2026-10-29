@@ -8,12 +8,13 @@ export function StatCounter({ value, suffix = "", label }) {
   const prefersReduced = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isNumeric = typeof value === "number";
   const [displayValue, setDisplayValue] = useState(
-    prefersReduced ? value : 0,
+    prefersReduced || !isNumeric ? value : 0,
   );
 
   useEffect(() => {
-    if (!isInView || prefersReduced) return;
+    if (!isInView || prefersReduced || !isNumeric) return;
     let raf;
     const start = performance.now();
     function tick(now) {
@@ -28,15 +29,15 @@ export function StatCounter({ value, suffix = "", label }) {
     }
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [isInView, prefersReduced, value]);
+  }, [isInView, prefersReduced, value, isNumeric]);
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="font-heading text-4xl font-bold tracking-tight text-royal md:text-5xl">
+    <div ref={ref}>
+      <div className="font-heading text-3xl font-bold tracking-tight text-royal md:text-4xl">
         {displayValue}
         {suffix}
       </div>
-      <div className="mt-2 font-body text-sm font-medium text-muted-foreground">
+      <div className="mt-1 font-body text-xs font-medium uppercase tracking-wide text-muted-foreground">
         {label}
       </div>
     </div>

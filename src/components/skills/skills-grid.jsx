@@ -1,5 +1,6 @@
 import { SkillCard } from "@/components/skills/skill-card";
 import { Reveal } from "@/components/shared/reveal";
+import { PULSE_DELAYS } from "@/constants/layout";
 
 export function SkillsGrid({ skills }) {
   if (!skills || skills.length === 0) return null;
@@ -13,6 +14,7 @@ export function SkillsGrid({ skills }) {
             description={skill.description}
             audience={skill.audience}
             duration={skill.duration}
+            delayClass={PULSE_DELAYS[idx % PULSE_DELAYS.length]}
           />
         </Reveal>
       ))}
